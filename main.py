@@ -1,26 +1,29 @@
-"""ai-excited-01 entry: copy the bundled image to the output directory.
+"""Moon Koi — an entry for make.fun's "Make the AI judge excited".
 
-Standard library only, no network access. The output is a byte-for-byte copy
-of the entry.png shipped in this repository, so running the program twice
-always writes identical bytes.
+The entry image lives beside this file as entry.png. All this program
+does is place an exact copy of it where the grader looks for it:
+MAKEFUN_OUTPUT_DIR when set (for a local run), /output otherwise.
+Copying bytes keeps both grading runs identical by construction.
 """
 
 import os
 import shutil
-import sys
 from pathlib import Path
 
+SOURCE = Path(__file__).resolve().parent / "entry.png"
 
-def main() -> int:
-    here = Path(__file__).resolve().parent
-    source = here / "entry.png"
-    out_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR") or "/output")
-    out_dir.mkdir(parents=True, exist_ok=True)
-    target = out_dir / "entry.png"
-    shutil.copyfile(source, target)
-    print(f"wrote {target} ({target.stat().st_size} bytes)")
-    return 0
+
+def output_path() -> Path:
+    return Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")) / "entry.png"
+
+
+def main() -> None:
+    target = output_path()
+    target.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(SOURCE, target)
+    if target.stat().st_size != SOURCE.stat().st_size:
+        raise SystemExit("entry.png copy is incomplete")
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()

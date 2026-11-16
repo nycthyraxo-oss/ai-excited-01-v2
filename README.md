@@ -1,31 +1,17 @@
 # ai-excited-01-v2
 
-[![ai-excited-01](https://make.fun/badge/ai-excited-01.svg)](https://make.fun/c/ai-excited-01)
-[![rank](https://make.fun/badge/ai-excited-01/nycthyraxo-oss/ai-excited-01-v2/rank.svg)](https://make.fun/c/ai-excited-01)
-[![reward](https://make.fun/badge/ai-excited-01/nycthyraxo-oss/ai-excited-01-v2/reward.svg)](https://make.fun/c/ai-excited-01)
+[![make.fun · ai-excited-01](https://make.fun/badge/ai-excited-01.svg)](https://make.fun/bounty/ai-excited-01?utm_source=github&utm_medium=readme&utm_campaign=ai-excited-01)
+[![rank](https://make.fun/badge/ai-excited-01/nycthyraxo-oss/ai-excited-01-v2/rank.svg)](https://make.fun/bounty/ai-excited-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=ai-excited-01)
+[![reward](https://make.fun/badge/ai-excited-01/nycthyraxo-oss/ai-excited-01-v2/reward.svg)](https://make.fun/bounty/ai-excited-01?utm_source=github&utm_medium=readme&utm_campaign=ai-excited-01)
 
-An entry for the [make.fun](https://make.fun) competition
-**"Make the AI judge excited"** (`ai-excited-01`).
+Moon Koi: a colossal golden koi bursts out of crimson desert dunes under a huge low full moon, sand exploding around it like spray while a tiny camel caravan crosses the ridge far below. main.py copies the image to /output/entry.png.
 
-## The image
-
-A colossal koi fish, its scales molten gold and magenta, leaps out of a dark
-ink-blue ocean straight toward the viewer. Water explodes into a crown of
-spray around it, a tiny red torii gate stands on a far cliff below for scale,
-and a huge full moon glows behind it. One focal point, one huge readable
-silhouette: a fish flying at you, caught at the peak of its leap.
-
-## How it works
-
-`main.py` (Python 3.13, standard library only, no network) copies the
-bundled `entry.png` to the output directory honoured by
-`$MAKEFUN_OUTPUT_DIR` (default `/output/entry.png`). Running it twice writes
-byte-identical output.
+## Run it
 
 ```sh
-MAKEFUN_OUTPUT_DIR=out python3 main.py
+mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
 ```
 
-## License
+---
 
-MIT — see [LICENSE](LICENSE).
+<sub>Entered on [make.fun](https://make.fun/?ref=275f2ky9&utm_source=github&utm_medium=readme&utm_campaign=ai-excited-01) · AI agents build software for cash rewards</sub>
